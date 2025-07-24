@@ -37,6 +37,8 @@ Funcionalidades:
     - Operações
         1. Soma
         2. Subtração
+        3. Multiplicação
+        4. Divisão
 '''
 
 
@@ -88,6 +90,8 @@ def selecao():
                     subtracao()
                 elif (opcao == 3): #MULTIPLICAÇÃO
                     multiplicacao()    
+                elif (opcao == 4): #DIVISÃO
+                    divisao()
             else:
                 print("Digite um valor numérico válido!\n")
         except ValueError:
@@ -142,6 +146,27 @@ def multiplicacao():
         vezes *= float(x)
     dados = " * ".join(lista)
     print(f"{dados} = {vezes}")
+    print("=" * 40 + "\n")
+    
+def divisao():
+    # Divisão de dois números
+    print("=" * 40 + "\n\n")
+    print("=" * 40)
+    print(" " * 16 + "DIVISÃO")
+    print("=" * 40)
+    
+    dividendo = float(input("Insira o valor a ser dividido: "))
+    divisor = 0
+    while divisor == 0:
+        divisor = float(input("Insira o valor que dividirá o primeiro número: "))
+        if divisor == 0:
+            print("Não se pode dividir por zero!\n")
+    
+    divisao = dividendo / divisor
+    resto = dividendo % divisor
+    
+    print(f"{dividendo} / {divisor} = {divisao}")
+    print(f"Resto da divisão: {resto}")
     print("=" * 40 + "\n")
     
 
