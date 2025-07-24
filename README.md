@@ -124,7 +124,7 @@ Este projeto proporcionou prática com:
 
 ## Autor
 
-**Natan Maurício Santos**
+**Natan Mauricio Santos**
 Tecnólogo em Tecnologia da Informação - FAETERJ
 📍 Petrópolis - RJ
 📧 [natanmauriciosantos@hotmail.com](mailto:natanmauriciosantos@hotmail.com)
