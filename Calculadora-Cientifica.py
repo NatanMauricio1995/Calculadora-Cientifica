@@ -33,6 +33,9 @@ Funcionalidades:
     - Menu Principal
     - Seleção da operação
         1. Estrutura básica
+        2. Escolhas
+    - Operações
+        1. Soma
 '''
 
 
@@ -79,14 +82,16 @@ def selecao():
             opcao = int(input("Digite a operação desejada (1 - 17): "))
             if(opcao > 0) and (opcao < 18):
                 if (opcao == 1):
-                    soma()
-                
+                    adicao()
+                if (opcao == 2):
+                    subtracao()
             else:
                 print("Digite um valor numérico válido!\n")
         except ValueError:
             print("Digite um valor numérico válido!\n")
     
-def soma():
+def adicao():
+    # Adição de 1 ou mais números
     print("=" * 40 + "\n\n")
     print("=" * 40)
     print("                  SOMA")
@@ -100,5 +105,44 @@ def soma():
     dados = " + ".join(lista)
     print(f"{dados} = {soma}")
     print("=" * 40 + "\n")
+    
+def subtracao():
+    # Subtração de 1 ou mais números
+    print("=" * 40 + "\n\n")
+    print("=" * 40)
+    print(" " * 15 + "SUBTRAÇÃO")
+    print("=" * 40)
+    
+    numeros = input("Insira os valores a serem subtraidos separados por espaço: ")
+    lista = numeros.split()
+    menos = 0
+    for x in lista:
+        if(x == 1):
+            menos += float(x)
+        else:
+            menos -= float(x)
+    dados = " - ".join(lista)
+    print(f"{dados} = {menos}")
+    print("=" * 40 + "\n")
+    
+def subtracao():
+    # Subtração de 1 ou mais números
+    print("=" * 40 + "\n\n")
+    print("=" * 40)
+    print(" " * 15 + "SUBTRAÇÃO")
+    print("=" * 40)
+    
+    numeros = input("Insira os valores a serem subtraidos separados por espaço: ")
+    lista = numeros.split()
+    menos = 0
+    for x in lista:
+        if(x == 1):
+            menos += float(x)
+        else:
+            menos -= float(x)
+    dados = " - ".join(lista)
+    print(f"{dados} = {menos}")
+    print("=" * 40 + "\n")
+    
     
 selecao()
