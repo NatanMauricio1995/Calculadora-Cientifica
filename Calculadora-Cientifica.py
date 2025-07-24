@@ -30,8 +30,9 @@ Funcionalidades:
     - Cotangente
     
     FAZES DO PROJETO:
-    - Menu Principal:
-        1. Opções
+    - Menu Principal
+    - Seleção da operação
+        1. Estrutura básica
 '''
 
 
@@ -77,11 +78,27 @@ def selecao():
             menu()
             opcao = int(input("Digite a operação desejada (1 - 17): "))
             if(opcao > 0) and (opcao < 18):
+                if (opcao == 1):
+                    soma()
+                
             else:
                 print("Digite um valor numérico válido!\n")
         except ValueError:
             print("Digite um valor numérico válido!\n")
     
+def soma():
+    print("=" * 40 + "\n\n")
+    print("=" * 40)
+    print("                  SOMA")
+    print("=" * 40)
     
+    numeros = input("Insira os valores a serem somados separados por espaço: ")
+    lista = numeros.split()
+    soma = 0
+    for x in lista:
+        soma += float(x)
+    dados = " + ".join(lista)
+    print(f"{dados} = {soma}")
+    print("=" * 40 + "\n")
     
 selecao()
