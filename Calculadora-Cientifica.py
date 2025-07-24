@@ -36,6 +36,7 @@ Funcionalidades:
         2. Escolhas
     - Operações
         1. Soma
+        2. Subtração
 '''
 
 
@@ -81,10 +82,12 @@ def selecao():
             menu()
             opcao = int(input("Digite a operação desejada (1 - 17): "))
             if(opcao > 0) and (opcao < 18):
-                if (opcao == 1):
+                if (opcao == 1): #ADIÇÃO
                     adicao()
-                if (opcao == 2):
+                elif (opcao == 2): #SUBTRAÇÃO
                     subtracao()
+                elif (opcao == 3): #MULTIPLICAÇÃO
+                    multiplicacao()    
             else:
                 print("Digite um valor numérico válido!\n")
         except ValueError:
@@ -116,8 +119,8 @@ def subtracao():
     numeros = input("Insira os valores a serem subtraidos separados por espaço: ")
     lista = numeros.split()
     menos = 0
-    for x in lista:
-        if(x == 1):
+    for indice, x in enumerate(lista):
+        if(indice == 0):
             menos += float(x)
         else:
             menos -= float(x)
@@ -125,24 +128,21 @@ def subtracao():
     print(f"{dados} = {menos}")
     print("=" * 40 + "\n")
     
-def subtracao():
-    # Subtração de 1 ou mais números
+def multiplicacao():
+    # Multiplica 2 ou mais números
     print("=" * 40 + "\n\n")
     print("=" * 40)
-    print(" " * 15 + "SUBTRAÇÃO")
+    print(" " * 13 + "MULTIPLICAÇÃO")
     print("=" * 40)
     
-    numeros = input("Insira os valores a serem subtraidos separados por espaço: ")
+    numeros = input("Insira os valores a serem multiplicados separados por espaço: ")
     lista = numeros.split()
-    menos = 0
+    vezes = 1
     for x in lista:
-        if(x == 1):
-            menos += float(x)
-        else:
-            menos -= float(x)
-    dados = " - ".join(lista)
-    print(f"{dados} = {menos}")
+        vezes *= float(x)
+    dados = " * ".join(lista)
+    print(f"{dados} = {vezes}")
     print("=" * 40 + "\n")
     
-    
+
 selecao()
