@@ -28,7 +28,17 @@ Funcionalidades:
     - Secante
     - Cossecante
     - Cotangente
+    
+    FAZES DO PROJETO:
+    - Menu Principal:
+        1. Opções
 '''
+
+
+
+
+
+
 operacoes = [
     "Soma (+);",
     "Subtração (-);",
@@ -57,7 +67,21 @@ def menu():
     print("=" * 40)
     print("Opções de operações:")
     for indice, opcao  in enumerate(operacoes):
-        print(f"{indice}. {opcao}")
-    print("-" * 40)
+        print(f"{indice + 1}. {opcao}")
+    print("-" * 40 + "\n")
     
-menu()
+def selecao():
+    opcao = 0
+    while (opcao != 17):
+        try:
+            menu()
+            opcao = int(input("Digite a operação desejada (1 - 17): "))
+            if(opcao > 0) and (opcao < 18):
+            else:
+                print("Digite um valor numérico válido!\n")
+        except ValueError:
+            print("Digite um valor numérico válido!\n")
+    
+    
+    
+selecao()
