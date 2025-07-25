@@ -40,19 +40,13 @@ Funcionalidades:
         3. Multiplicação
         4. Divisão
 '''
-
-
-
-
-
-
 operacoes = [
     "Soma (+);",
     "Subtração (-);",
     "Multiplicação (*);",
     "Divisão (/);",
     "Fatorial (x!);",
-    "Porcentagem (%);"
+    "Porcentagem (%);",
     "Logarítmo (log);",
     "Potência (x^y);",
     "Raiz (√x);",
@@ -92,6 +86,8 @@ def selecao():
                     multiplicacao()    
                 elif (opcao == 4): #DIVISÃO
                     divisao()
+                elif (opcao == 5): #FATORIAL
+                    fatorial()
             else:
                 print("Digite um valor numérico válido!\n")
         except ValueError:
@@ -169,5 +165,24 @@ def divisao():
     print(f"Resto da divisão: {resto}")
     print("=" * 40 + "\n")
     
+def fatorial():
+# Exibe o fatorial de um número inteiro
+    print("=" * 40 + "\n\n")
+    print("=" * 40)
+    print(" " * 13 + "FATORIAL")
+    print("=" * 40)
+    numero = -1
+    while numero < 0:
+        try:
+            numero = int(input("Insira um número inteiro positivo: "))
+            if (numero < 0):
+                print("Não se pode fazer fatorial de número negativo! Tente novamente!\n")
+        except ValueError:
+            print("Digite um valor numérico válido!\n")
+    fat = 1
+    for x in range(1, numero + 1):
+        fat *= int(x)
+    print(f"{numero}! = {fat}")
+    print("=" * 40 + "\n")
 
 selecao()
