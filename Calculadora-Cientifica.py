@@ -39,6 +39,7 @@ Funcionalidades:
         2. Subtração
         3. Multiplicação
         4. Divisão
+        5. Fatorial
 '''
 operacoes = [
     "Soma (+);",
@@ -88,6 +89,8 @@ def selecao():
                     divisao()
                 elif (opcao == 5): #FATORIAL
                     fatorial()
+                elif (opcao == 6): #PORCENTAGEM
+                    porcentual()
             else:
                 print("Digite um valor numérico válido!\n")
         except ValueError:
@@ -183,6 +186,42 @@ def fatorial():
     for x in range(1, numero + 1):
         fat *= int(x)
     print(f"{numero}! = {fat}")
+    print("=" * 40 + "\n")
+    
+def teste_float(valor):
+# Testa se o valor inserido é float
+    try:
+        float(valor)
+        return True
+    except ValueError:
+        return False
+
+    
+def porcentual():
+# Calcula percentual
+    print("=" * 40 + "\n\n")
+    print("=" * 40)
+    print(" " * 14 + "PORCENTAGEM")
+    print("=" * 40)
+    x = False
+    while (x == False):
+        try:
+            numero_str = input("Digite o valor total: ")
+            porcento_str = input("Digite o percentual desejado (não use %): ")
+
+            if (teste_float(numero_str) == False) or (teste_float(porcento_str) == False):
+                print("Digite um valor numérico válido!\n")
+                continue
+
+            numero = float(numero_str)
+            porcento = float(porcento_str)
+            x = True
+
+        except ValueError:
+            print("Digite um valor numérico válido!\n")
+
+    percentagem = numero * porcento / 100
+    print(f"{numero} * {porcento}% = {percentagem:.5f}")
     print("=" * 40 + "\n")
 
 selecao()
